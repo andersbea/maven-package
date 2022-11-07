@@ -23,8 +23,10 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
 
+      - name: Set version
+        run: mvn -B versions:set -DnewVersion="${{ github.event.inputs.version }}"
+
       - name: Publish to GitHub Packages
         run: mvn --batch-mode deploy
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          VERSION: ${{ github.event.inputs.version }}
