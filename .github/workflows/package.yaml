@@ -27,6 +27,6 @@ jobs:
         run: mvn -B versions:set -DnewVersion="${{ github.event.inputs.version }}"
 
       - name: Publish to GitHub Packages
-        run: mvn --batch-mode deploy
+        run: mvn --batch-mode deploy -pl common
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}

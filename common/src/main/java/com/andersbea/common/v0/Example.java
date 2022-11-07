@@ -1,4 +1,4 @@
-package com.andersbea.v0;
+package com.andersbea.common.v0;
 
 public class Example {
     public String value;
